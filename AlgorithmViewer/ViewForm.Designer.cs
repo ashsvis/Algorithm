@@ -103,6 +103,7 @@
             this.tsmiPreview,
             this.toolStripSeparator2,
             this.tsmiExit});
+            this.файлToolStripMenuItem.Enabled = false;
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "&Файл";
@@ -134,6 +135,7 @@
             // 
             // tsmiSave
             // 
+            this.tsmiSave.Enabled = false;
             this.tsmiSave.Image = ((System.Drawing.Image)(resources.GetObject("tsmiSave.Image")));
             this.tsmiSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsmiSave.Name = "tsmiSave";
@@ -144,6 +146,7 @@
             // 
             // tsmiSaveAs
             // 
+            this.tsmiSaveAs.Enabled = false;
             this.tsmiSaveAs.Name = "tsmiSaveAs";
             this.tsmiSaveAs.Size = new System.Drawing.Size(233, 22);
             this.tsmiSaveAs.Text = "Сохранить &как";
@@ -442,13 +445,13 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.DefaultExt = "vtx";
-            this.openFileDialog1.Filter = "Файл вершин (*.vtx)|*.vtx";
+            this.openFileDialog1.DefaultExt = "alg";
+            this.openFileDialog1.Filter = "Файл алгоритма (*.alg)|*.alg";
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.DefaultExt = "vtx";
-            this.saveFileDialog1.Filter = "Файл вершин (*.vtx)|*.vtx";
+            this.saveFileDialog1.DefaultExt = "alg";
+            this.saveFileDialog1.Filter = "Файл алгоритма (*.alg)|*.alg";
             // 
             // ViewForm
             // 
