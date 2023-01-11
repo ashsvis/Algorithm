@@ -93,7 +93,7 @@
             this.tsmiHelp});
             this.menuStrip1.Location = new System.Drawing.Point(1, 1);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(661, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1107, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -346,7 +346,7 @@
             this.tsbHelp});
             this.toolStrip1.Location = new System.Drawing.Point(1, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(661, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1107, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -443,9 +443,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(1, 386);
+            this.statusStrip1.Location = new System.Drawing.Point(1, 654);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(661, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1107, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -462,8 +462,8 @@
             // splitContainer1
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::AlgorithmViewer.Properties.Settings.Default, "TreeViewSplitDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(1, 50);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -474,8 +474,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.algorithmView);
-            this.splitContainer1.Size = new System.Drawing.Size(661, 336);
-            this.splitContainer1.SplitterDistance = global::AlgorithmViewer.Properties.Settings.Default.TreeViewSplitDistance;
+            this.splitContainer1.Size = new System.Drawing.Size(1107, 604);
+            this.splitContainer1.SplitterDistance = 207;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -485,7 +485,7 @@
             this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView.Location = new System.Drawing.Point(0, 0);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(167, 334);
+            this.treeView.Size = new System.Drawing.Size(205, 602);
             this.treeView.TabIndex = 0;
             // 
             // algorithmView
@@ -494,21 +494,18 @@
             this.algorithmView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.algorithmView.Location = new System.Drawing.Point(0, 0);
             this.algorithmView.Name = "algorithmView";
-            this.algorithmView.Size = new System.Drawing.Size(488, 334);
+            this.algorithmView.Size = new System.Drawing.Size(896, 602);
             this.algorithmView.TabIndex = 0;
             // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = global::AlgorithmViewer.Properties.Settings.Default.ViewFormClientSize;
+            this.ClientSize = new System.Drawing.Size(1109, 677);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::AlgorithmViewer.Properties.Settings.Default, "ViewFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::AlgorithmViewer.Properties.Settings.Default, "ViewFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Location = global::AlgorithmViewer.Properties.Settings.Default.ViewFormLocation;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ViewForm";
             this.Padding = new System.Windows.Forms.Padding(1);
@@ -516,8 +513,6 @@
             this.Text = "Алгоритм";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewForm_FormClosing);
             this.Load += new System.EventHandler(this.ViewForm_Load);
-            this.ClientSizeChanged += new System.EventHandler(this.ViewForm_ClientSizeChanged);
-            this.LocationChanged += new System.EventHandler(this.ViewForm_LocationChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

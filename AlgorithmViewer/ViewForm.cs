@@ -16,7 +16,6 @@ namespace AlgorithmViewer
 
         private void ViewForm_Load(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Reload();
             if (Location.IsEmpty)
                 CenterToScreen();
         }
@@ -56,14 +55,5 @@ namespace AlgorithmViewer
             Close();
         }
 
-        private void ViewForm_LocationChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Save();
-        }
-
-        private void ViewForm_ClientSizeChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Save();
-        }
     }
 }
