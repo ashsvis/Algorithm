@@ -46,5 +46,29 @@ namespace AlgorithmViewer.Properties {
                 this["ViewFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState ViewFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["ViewFormWindowState"]));
+            }
+            set {
+                this["ViewFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("170")]
+        public int TreeViewSplitDistance {
+            get {
+                return ((int)(this["TreeViewSplitDistance"]));
+            }
+            set {
+                this["TreeViewSplitDistance"] = value;
+            }
+        }
     }
 }

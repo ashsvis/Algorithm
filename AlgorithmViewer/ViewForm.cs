@@ -21,10 +21,6 @@ namespace AlgorithmViewer
                 CenterToScreen();
         }
 
-        private void ViewForm_SizeChanged(object sender, EventArgs e)
-        {
-        }
-
         private void tsmiCreate_Click(object sender, EventArgs e)
         {
         }
@@ -39,6 +35,7 @@ namespace AlgorithmViewer
 
         private void tsmiSave_Click(object sender, EventArgs e)
         {
+
         }
 
         private void tsmiSaveAs_Click(object sender, EventArgs e)
@@ -51,12 +48,22 @@ namespace AlgorithmViewer
 
         private void ViewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.Save();
+
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ViewForm_LocationChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+        }
+
+        private void ViewForm_ClientSizeChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 }

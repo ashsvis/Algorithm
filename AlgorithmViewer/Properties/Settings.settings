@@ -8,5 +8,11 @@
     <Setting Name="ViewFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">663, 409</Value>
     </Setting>
+    <Setting Name="ViewFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="TreeViewSplitDistance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">170</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
