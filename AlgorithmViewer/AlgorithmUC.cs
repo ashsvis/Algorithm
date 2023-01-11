@@ -21,6 +21,7 @@ namespace AlgorithmViewer
 
         private bool contentChanged = false;
         private int lastVertexIndex;
+        private Algorithm.Size shiftSize = new Algorithm.Size(0, 0);
 
         public event EventHandler<EventArgs> ContentChanged;
 
@@ -60,6 +61,8 @@ namespace AlgorithmViewer
                 else
                 {
                     lastVertexIndex = figures.FindIndex(v => v.Location.Equals(figure.Location));
+                    shiftSize.Width = figure.Location.X - e.Location.X;
+                    shiftSize.Height = figure.Location.Y - e.Location.Y;
                 }
             }
         }
@@ -79,7 +82,7 @@ namespace AlgorithmViewer
                     if (lastVertexIndex >= 0 && lastVertexIndex < figures.Count)
                     {
                         // перемещаем одну вершину
-                        figures[lastVertexIndex].Location = new Location(e.Location.X, e.Location.Y);
+                        figures[lastVertexIndex].Location = new Location(e.Location.X + shiftSize.Width, e.Location.Y + shiftSize.Height);
                         contentChanged = true;
                         Invalidate();
                     }
