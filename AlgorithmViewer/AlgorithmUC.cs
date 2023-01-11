@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithm;
+using System;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -7,6 +8,8 @@ namespace AlgorithmViewer
     public partial class AlgorithmUC : UserControl
     {
         private bool buttonPressed = false;
+
+        private Figures figures = new Figures();
 
         public AlgorithmUC()
         {
@@ -25,7 +28,10 @@ namespace AlgorithmViewer
         {
             var gr = e.Graphics;
             gr.SmoothingMode = SmoothingMode.HighQuality;
-
+            foreach (var fig in figures)
+            {
+                GraphicsHelper.DrawFigure(gr, fig);
+            }
         }
 
         /// <summary>
@@ -38,6 +44,14 @@ namespace AlgorithmViewer
             if (e.Button == MouseButtons.Left)
             {
                 buttonPressed = e.Button == MouseButtons.Left;
+                // ищем вершину с координатами рядом с точкой нажатия
+                var figure = figures.Find(fig => GraphicsHelper.Contains(fig, e.Location));
+                if (figure == null) 
+                {
+                    figure = new Figure() { Location = new Location(e.Location.X, e.Location.Y) };
+                    figures.Add(figure);
+                    Invalidate();
+                }
             }
         }
 
