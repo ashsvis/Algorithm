@@ -61,7 +61,7 @@ namespace AlgorithmViewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("170")]
+        [global::System.Configuration.DefaultSettingValueAttribute("169")]
         public int TreeViewSplitDistance {
             get {
                 return ((int)(this["TreeViewSplitDistance"]));

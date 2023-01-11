@@ -12,7 +12,7 @@
       <Value Profile="(Default)">Normal</Value>
     </Setting>
     <Setting Name="TreeViewSplitDistance" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">170</Value>
+      <Value Profile="(Default)">169</Value>
     </Setting>
   </Settings>
 </SettingsFile>

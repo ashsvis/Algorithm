@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlgorithmUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlgorithmUC.Designer.cs">
+      <DependentUpon>AlgorithmUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewForm.cs">
@@ -54,6 +60,9 @@
     <Compile Include="ViewForm.designer.cs">
       <DependentUpon>ViewForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlgorithmUC.resx">
+      <DependentUpon>AlgorithmUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
