@@ -1,6 +1,8 @@
 ﻿using Algorithm;
 using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AlgorithmViewer
@@ -18,6 +20,8 @@ namespace AlgorithmViewer
         }
 
         private bool contentChanged = false;
+        private int lastVertexIndex;
+
         public event EventHandler<EventArgs> ContentChanged;
 
         /// <summary>
@@ -44,6 +48,7 @@ namespace AlgorithmViewer
             if (e.Button == MouseButtons.Left)
             {
                 buttonPressed = e.Button == MouseButtons.Left;
+                contentChanged = false;
                 // ищем вершину с координатами рядом с точкой нажатия
                 var figure = figures.Find(fig => GraphicsHelper.Contains(fig, e.Location));
                 if (figure == null) 
@@ -51,6 +56,10 @@ namespace AlgorithmViewer
                     figure = new Figure() { Location = new Location(e.Location.X, e.Location.Y) };
                     figures.Add(figure);
                     Invalidate();
+                }
+                else
+                {
+                    lastVertexIndex = figures.FindIndex(v => v.Location.Equals(figure.Location));
                 }
             }
         }
@@ -62,9 +71,19 @@ namespace AlgorithmViewer
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
-            if (buttonPressed)
+            if (figures.Count > 0)
             {
-
+                Cursor = figures.Any(fig => GraphicsHelper.Contains(fig, e.Location)) ? Cursors.Hand : Cursors.Default;
+                if (buttonPressed)
+                {
+                    if (lastVertexIndex >= 0 && lastVertexIndex < figures.Count)
+                    {
+                        // перемещаем одну вершину
+                        figures[lastVertexIndex].Location = new Location(e.Location.X, e.Location.Y);
+                        contentChanged = true;
+                        Invalidate();
+                    }
+                }
             }
         }
 
@@ -74,6 +93,7 @@ namespace AlgorithmViewer
         /// <param name="e"></param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
+            base.OnMouseUp(e);
             buttonPressed = false;
         }
     }
