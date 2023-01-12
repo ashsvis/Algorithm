@@ -51,7 +51,7 @@ namespace AlgorithmViewer
                 buttonPressed = e.Button == MouseButtons.Left;
                 contentChanged = false;
                 // ищем вершину с координатами рядом с точкой нажатия
-                var figure = figures.Find(fig => GraphicsHelper.Contains(fig, e.Location));
+                var figure = figures.FindLast(fig => GraphicsHelper.Contains(fig, e.Location));
                 if (figure == null) 
                 {
                     figure = new Figure() { Location = new Location(e.Location.X, e.Location.Y) };
@@ -60,7 +60,7 @@ namespace AlgorithmViewer
                 }
                 else
                 {
-                    lastVertexIndex = figures.FindIndex(v => v.Location.Equals(figure.Location));
+                    lastVertexIndex = figures.FindLastIndex(v => v.Location.Equals(figure.Location));
                     shiftSize.Width = figure.Location.X - e.Location.X;
                     shiftSize.Height = figure.Location.Y - e.Location.Y;
                 }

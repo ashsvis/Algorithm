@@ -11,8 +11,10 @@ namespace Algorithm
                    location.Y >= fig.Location.Y && location.Y <= fig.Location.Y + fig.Size.Height;
         }
 
-        public static void DrawFigure(Graphics graphics, Figure figure, Pen pen = null)
+        public static void DrawFigure(Graphics graphics, Figure figure, Pen pen = null, Brush brush = null)
         {
+            graphics.FillRectangle(brush ?? Brushes.White, (float)figure.Location.X, (float)figure.Location.Y,
+                                               (float)figure.Size.Width, (float)figure.Size.Height);
             graphics.DrawRectangle(pen ?? Pens.Black, (float)figure.Location.X, (float)figure.Location.Y, 
                                                (float)figure.Size.Width, (float)figure.Size.Height);
         }
